@@ -1,6 +1,6 @@
 import os
 import sys
-from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy import Column, ForeignKey, Integer, String,Boolean
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
@@ -14,7 +14,7 @@ class User(Base):
     last_name = Column(String(250))
     email=Column(String(250), nullable=False)
     password=Column(String(250), nullable=False)
-    # is_logged= Column(Boolean, default=False, nullable=False)
+    is_logged= Column(Boolean, default=False, nullable=False)
 class Characters(Base):
     __tablename__ = 'character'
     id = Column(Integer, primary_key=True)
